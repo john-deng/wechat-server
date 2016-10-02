@@ -1,0 +1,12 @@
+wechat_server:
+  image: hub.docker.vpclub.cn/vpclub/node:5
+  net: host
+  ports:
+    - 8099:8099
+  volumes:
+    - ./:/app
+  environment:
+    - PORT=8099
+
+  working_dir: /app
+  command: ./node_modules/.bin/nodemon ./bin/www
